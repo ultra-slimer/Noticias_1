@@ -1,0 +1,9 @@
+﻿@using Prueba_1.Models;
+
+<h1>Noticias</h1>
+@foreach (Noticias n in ViewBag.NoticiasSelect)
+{
+    <a href='@Url.Action("Noticia","Home",new { id = n.IdNoticias})'>
+        <h1>@n.Titulo</h1>
+    </a>
+}

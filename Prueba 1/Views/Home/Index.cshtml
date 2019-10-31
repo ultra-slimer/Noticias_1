@@ -1,0 +1,23 @@
+﻿@using Prueba_1.Models;
+
+
+@foreach (Noticias a in ViewBag.Noticias)
+{
+    if (a.Destacado == true)
+    {
+        ViewBag.Destacado = a.Titulo;
+        ViewBag.Foto = a.Imagen;
+        ViewBag.Id = a.IdNoticias;
+    }
+}
+<a href='@Url.Action("Noticia","Home",new { id = ViewBag.Id})'>
+    <h1>@ViewBag.Destacado</h1>
+    <img src="~/Content/Imagenes/@ViewBag.Foto" />
+</a>
+<h1>Links a noticias</h1>
+@foreach (TipoNoticias tipo in ViewBag.Categorias)
+{
+    <a href=@Url.Action("Noticias","Home",new { id = tipo.IdNoticia})>
+        <h3>@tipo.Nombre</h3>
+    </a>
+}

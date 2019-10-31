@@ -1,0 +1,22 @@
+﻿@using Prueba_1.Models
+@model Noticias
+@{
+    ViewBag.Title = "Modify";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Modificar noticia</h1>
+@Html.BeginForm("Edit", "BackOffice", FormMethod.Post){
+
+<p>Id:</p> @Model.IdNoticias <br />
+
+<p>Titulo:</p> @Html.TextAreaFor(model => model.Descripcion) <br />
+
+<p>Imagen:</p> @Html.TextAreaFor(model => model.Imagen) <br />
+
+<p>Descripcion:</p> @Html.TextAreaFor(model => model.Descripcion) <br />
+
+<p>Categoria:</p> @Html.TextBoxFor(model => model.IdTipoNoticias) <br />
+
+<input type="submit" value="Enviar" />
+}
+

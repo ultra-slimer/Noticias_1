@@ -1,0 +1,13 @@
+﻿@using Prueba_1.Models
+
+@model Usuario
+
+
+@Html.BeginForm("Loguearse","Backoffice", FormMethod.Post) {
+
+<p>Nombre:</p> @Html.TextBoxFor(model => model.UserName) <br />
+
+<p>Contraseña:</p> @Html.PasswordFor(model => model.Password) <br />
+
+<input type="submit" value="Enviar" />
+}

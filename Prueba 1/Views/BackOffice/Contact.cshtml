@@ -1,0 +1,18 @@
+﻿@using Prueba_1.Models;
+@{
+    ViewBag.Title = "Backoffice";
+}
+
+<h1>Backoffice</h1>
+@foreach (Noticias n in ViewBag.lst)
+{
+    <a href='@Url.Action("Noticia","Home",new { id = n.IdNoticias})'>
+        <h2>@n.Titulo</h2>
+    </a>
+    <a href="@Url.Action("Highlight","Backoffice",new { id = n.IdNoticias})">
+        <h5>Destacar</h5>
+    </a>
+    <a href="@Url.Action("Modify", "BackOffice", new { id = n.IdNoticias})">
+        <h5>Modificar</h5>
+    </a>
+}
